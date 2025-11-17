@@ -1,4 +1,4 @@
-import Project from "../Components/Project.jsx"
+import Projects from "../Components/Projects.jsx"
 function About(){
     return (
     <div>

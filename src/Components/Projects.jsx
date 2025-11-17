@@ -1,13 +1,21 @@
-import "./Project.css"
+import "./Projects.css"
+import {useState} from "react"
 // import projectPic from "../assets/";
 
-function Project(props){
-
+function Projects(props){
+  const [projects, setProjects] = useState(false)
+  const showProjects = () => {
+    if (!showProjects){
+      setProjects(true)
+    }
+  } 
     return (
     <>
       <div className="project">
         <h1>Lo's Portfollio</h1>
-        <img src={projectPic} alt="Project Picture" className="projectImg" />
+        {/* <img src={projectPic} alt="Project Picture" className="projectImg" /> */}
+        <button className="projectShow" onClick={showProjects}>Click to open!</button>
+        <div>${projects}</div>
         <h2 className="projectName">{props.name}</h2>
         <a className="projectRepo" href={props.repo} target="_blank">Github</a>
         
@@ -43,4 +51,4 @@ function Project(props){
   )
 }
 
-export default Project; // Can't export more than one function per file using default
+export default Projects; // Can't export more than one function per file using default
