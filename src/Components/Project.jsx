@@ -1,5 +1,5 @@
 import "./Project.css"
-import projectPic from "../assets/";
+// import projectPic from "../assets/";
 
 function Project(props){
 
