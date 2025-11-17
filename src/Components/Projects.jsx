@@ -3,19 +3,19 @@ import {useState} from "react"
 // import projectPic from "../assets/";
 
 function Projects(props){
-  const [projects, setProjects] = useState(false)
-  const showProjects = () => {
-    if (!showProjects){
-      setProjects(true)
+  const [name, setName] = useState("Click to open!")
+  const [display, setDisplay] = useState(false)
+  
+  function handleClick(){
+    setName(was => was === "Click to open!" ? "Click to close!" : "Click to open!")
+    
+    setDisplay(was => !was);
     }
-  } 
+
     return (
     <>
       <div className="project">
-        <h1>Lo's Portfollio</h1>
         {/* <img src={projectPic} alt="Project Picture" className="projectImg" /> */}
-        <button className="projectShow" onClick={showProjects}>Click to open!</button>
-        <div>${projects}</div>
         <h2 className="projectName">{props.name}</h2>
         <a className="projectRepo" href={props.repo} target="_blank">Github</a>
         
@@ -30,13 +30,13 @@ function Projects(props){
         <div className="projectWriteUp">
           <h3 className="writeUpTitle"></h3>
           <h4 className="goal">What the project does</h4>
-          <p>{writeUp.goal}</p>
+          <p>{props.writeUp.goal}</p>
 
           <h4 className="learned">What I learned</h4>
-          <p>{writeUp.learned}</p>
+          <p>{props.writeUp.learned}</p>
 
           <h4 className="role">My role</h4>
-          <p>{writeUp.role}</p>
+          <p>{props.writeUp.role}</p>
 
           <h4 className="challenges">Challenges I encountered</h4>
           <ul>
@@ -46,9 +46,11 @@ function Projects(props){
           </ul>
           <p className="projectSummary">{props.toSum}</p>
         </div>
+        <button className="projectShow" onClick={handleClick(display)}>{name}</button>
+        <div>{Projects}</div>
       </div>
     </>
-  )
-}
+    )
+  }
 
-export default Projects; // Can't export more than one function per file using default
+  export default Projects; // Can't export more than one function per file using default

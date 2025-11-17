@@ -2,8 +2,8 @@ import Projects from "../Components/Projects.jsx"
 function About(){
     return (
     <div>
-        <h2>About</h2>
-        <Project 
+        <h1>Lo's Portfollio</h1>
+        <Projects
       name="Arcane Laboratorium" 
       repo="https://github.com/Lo-str/js-quest.git" 
       tech={[
@@ -28,7 +28,7 @@ function About(){
       toSum="This project strengthened my ability to write robust interactive JavaScript tools using only core language features."
       />
 
-      <Project 
+      <Projects 
       name="Vault of the Realm" 
       repo="https://github.com/Lo-str/js-quest.git" 
       tech={[
@@ -53,7 +53,7 @@ function About(){
       toSum="This project was a great exercise in error-tolerant financial logic and controlled UI flow inside JavaScript."
       />
 
-      <Project 
+      <Projects 
       name="Seer's Challenge" 
       repo="https://github.com/Lo-str/js-quest.git" 
       tech={[
