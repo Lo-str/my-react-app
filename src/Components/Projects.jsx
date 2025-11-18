@@ -3,22 +3,19 @@ import {useState} from "react"
 // import projectPic from "../assets/";
 
 function Projects(props){
-  const [name, setName] = useState("Click to open!")
-  const [display, setDisplay] = useState(false)
-  
-  function handleClick(){
-    setName(was => was === "Click to open!" ? "Click to close!" : "Click to open!")
-    
-    setDisplay(was => !was);
-    }
+  const [showMore, setShowMore] = useState(false)
+  const content = 
+  // {showMore ? props.text: `${text.substring(0, 250)}`}
+  // {showMore ? "Show more" : "Show less"}
 
-    return (
-    <>
-      <div className="project">
+  return (
+  <>
+    <div className="project">
         {/* <img src={projectPic} alt="Project Picture" className="projectImg" /> */}
         <h2 className="projectName">{props.name}</h2>
         <a className="projectRepo" href={props.repo} target="_blank">Github</a>
-        
+
+      <div className="projectContent">{props.content}
         <article className="projectTech">
           <h3 className="techTitle">Tech Used</h3>
           <ul>
@@ -46,11 +43,14 @@ function Projects(props){
           </ul>
           <p className="projectSummary">{props.toSum}</p>
         </div>
-        <button className="projectShow" onClick={handleClick(display)}>{name}</button>
-        <div>{Projects}</div>
       </div>
-    </>
-    )
+      {showMore ? props.title : props.fullContent}
+      <button className="btn" onClick={() => setShowMore(!showMore)}></button>
+      {showMore ? "Show more" : "Show less"}
+      <div>{Projects}</div>
+    </div>
+  </>
+  )
   }
 
   export default Projects; // Can't export more than one function per file using default
