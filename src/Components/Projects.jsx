@@ -9,11 +9,18 @@ function Projects(props){
   <>
     <div className="project">
       <h2 className="projectName">{props.name}</h2>
+
+      {/* To add:
+      - fa-github inline with Project name */}
       <a className="projectRepo" href={props.repo} target="_blank">Github</a>
       <br />
-      {show ? "Show less" : "Show more"}
-      <button className="btn" onClick={() => setShow((show) => !show)}></button>
-      <div className="projectContent" style={{display: show ? "block" : "none"}}>
+
+      {/* To add: 
+      - Move button under text when display is block
+      - Columns
+      - Images for preview*/}
+      <button className="btn" onClick={() => setShow((show) => !show)}>{show ? "Show more" : "Show less"}</button>
+      <div className="projectContent" style={{display: show ? "none" : "block"}}>
         <article className="projectTech">
           <h3 className="tech">Tech Used</h3>
           <ul>
@@ -42,10 +49,9 @@ function Projects(props){
           <p className="projectSummary">{props.toSum}</p>
         </div>
       </div>
-      {/* {showMore ? props.tech && props.writeUp && props.toSum : props.name && props.repo} */}
     </div>
   </>
   )
   }
 
-  export default Projects; // Can't export more than one function per file using default
+  export default Projects;
