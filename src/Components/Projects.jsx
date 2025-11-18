@@ -3,21 +3,19 @@ import {useState} from "react"
 // import projectPic from "../assets/";
 
 function Projects(props){
-  const [showMore, setShowMore] = useState(false)
-  const content = 
-  // {showMore ? props.text: `${text.substring(0, 250)}`}
-  // {showMore ? "Show more" : "Show less"}
+  const [show, setShow] = useState(true)
 
   return (
   <>
     <div className="project">
-        {/* <img src={projectPic} alt="Project Picture" className="projectImg" /> */}
-        <h2 className="projectName">{props.name}</h2>
-        <a className="projectRepo" href={props.repo} target="_blank">Github</a>
-
-      <div className="projectContent">{props.content}
+      <h2 className="projectName">{props.name}</h2>
+      <a className="projectRepo" href={props.repo} target="_blank">Github</a>
+      <br />
+      {show ? "Show less" : "Show more"}
+      <button className="btn" onClick={() => setShow((show) => !show)}></button>
+      <div className="projectContent" style={{display: show ? "block" : "none"}}>
         <article className="projectTech">
-          <h3 className="techTitle">Tech Used</h3>
+          <h3 className="tech">Tech Used</h3>
           <ul>
             {props.tech.map((tech, i) => (
             <li key={i}>{tech}</li>
@@ -25,7 +23,7 @@ function Projects(props){
           </ul>
         </article>
         <div className="projectWriteUp">
-          <h3 className="writeUpTitle"></h3>
+          <h3 className="writeUp">Write Up</h3>
           <h4 className="goal">What the project does</h4>
           <p>{props.writeUp.goal}</p>
 
@@ -44,10 +42,7 @@ function Projects(props){
           <p className="projectSummary">{props.toSum}</p>
         </div>
       </div>
-      {showMore ? props.title : props.fullContent}
-      <button className="btn" onClick={() => setShowMore(!showMore)}></button>
-      {showMore ? "Show more" : "Show less"}
-      <div>{Projects}</div>
+      {/* {showMore ? props.tech && props.writeUp && props.toSum : props.name && props.repo} */}
     </div>
   </>
   )
