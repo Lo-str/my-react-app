@@ -2,7 +2,7 @@ import Projects from "../../components/Projects/Projects.jsx"
 function About(){
     return (
     <div>
-        <h1>Lo's Portfollio</h1>
+        <h1>Projects</h1>
         <Projects
           name="Arcane Laboratorium"
           repo="https://github.com/Lo-str/js-quest.git"
