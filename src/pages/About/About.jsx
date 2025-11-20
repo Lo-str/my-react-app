@@ -17,7 +17,7 @@ function About(){
           writeUp={{
             goal: "Arcane Laboratorium is a text-based library manager wrapped in a medieval-fantasy theme. Users can add books, list their library, mark books as read or unread, remove books, and receive immersive in-world feedback.",
             learned:"I deepened my understanding of JavaScript program flow, error handling, and state management in a no-framework environment. I practiced input validation, edge-case protection, and the creation of reusable functions for menu-driven programs. I also refined how to theme logic and text feedback to match a narrative aesthetic.",
-            role:"Solo project: I wrote the entire codebase, theme, and interactions.",
+            role:"Solo project",
             challenges:[
               "Handling invalid inputs without breaking the flow",
               "Preventing undefined behaviours in nested prompts",
@@ -40,8 +40,8 @@ function About(){
           "Theming & world-building integrated into logic"
         ]}
         writeUp={{
-          goal: "Vault of the Realm is a fantasy-themed ATM simulator. Users can deposit, withdraw, and check balances through a narrative interface (“The Vault Keeper awaits your decree”). It replicates real account-logic safely while maintaining an engaging RPG-style experience.",
-          learned:"This project reinforced concepts such as object-oriented programming, method design, conditional routes, and reprompt logic. I learned to anticipate user mistakes and redirect them gracefully, and I practiced designing a consistent performance loop without UI frameworks.",
+          goal: "Vault of the Realm is a fantasy-themed ATM simulator. Users can deposit, withdraw, and check balances through a narrative interface. It replicates real account-logic safely while maintaining an engaging RPG-style experience.",
+          learned:"This project reinforced concepts such as object-oriented programming, method design, conditional routes, and reprompt logic. I learned to anticipate user mistakes as well as redirect them, and I practiced designing a consistent performance loop without UI frameworks.",
           role:"Solo development: logic, design, theme, and testing.",
           challenges:[
             "Implementing a reprompt system that only triggers on errors",
@@ -65,7 +65,7 @@ function About(){
           "Design of game logic without external libraries"
         ]}
         writeUp={{
-          goal: "Seer’s Challenge is a medieval-fantasy number-guessing game where players attempt to divine a secret number chosen by the Seer. They receive hints (“The fates whisper: higher…”) until they guess correctly, with difficulty levels and scoring logic.",
+          goal: "Seer’s Challenge is a medieval-fantasy number-guessing game where players attempt to divine a secret number chosen by the Seer. They receive hints until they guess correctly, with difficulty levels and scoring logic.",
           learned:"I practiced random number generation, event-driven JavaScript, user-feedback loops, and DOM-based UI updates. I refined how difficulty affects game variables and learned to balance a simple mechanic with polished, readable code.",
           role:"Solo project: full design, mechanics, visual styling, and thematic writing.",
           challenges:[
