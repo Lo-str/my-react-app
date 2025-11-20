@@ -1,6 +1,6 @@
 // Tools
-@use "./utils/vars" as v;
-@use "./utils/mixins" as m;
+@use "../utils/vars" as v;
+@use "../utils/mixins" as m;
 
 // Layout
 .app {
@@ -23,7 +23,7 @@
 }
 
 .app__title {
-  @include heading(v.$sp_21);
+  @include m.heading(v.$sp_21);
 }
 
 .app__main {

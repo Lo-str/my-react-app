@@ -1,4 +1,4 @@
-@use "./utils/vars" as v;
+@use "./vars" as v;
 
 @mixin flex($direction, $justify, $align, $gap) {
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 @mixin heading($size) {
-  font-family: $ft-heading;
+  // font-family: $ft-heading;
   font-size: $size;
   letter-spacing: v.$sp_01;
 }
