@@ -1,16 +1,15 @@
-import { useState } from "react"
 import Projects from "../../components/Projects/Projects.jsx"
-import Popup from "../../components/Popup/Popup.jsx"
 import arcane from "../../assets/images/arcane.svg"
 
 function About(){
-  const [showPopup, setShowPopup] = useState(false)
     return (
     <div>
         <h1>Projects</h1>
+
         <Projects
           name="Arcane Laboratorium"
           repo="https://github.com/Lo-str/js-quest.git"
+          image={arcane}
           tech={[
             "JavaScript (ES6+): condition handling, input validation, program flow",
             "HTML5 & Semantic Structure",
@@ -36,6 +35,7 @@ function About(){
       <Projects
         name="Vault of the Realm"
         repo="https://github.com/Lo-str/js-quest.git"
+        image={arcane}
         tech={[
           "JavaScript (Objects, methods, validation)",
           "HTML5, CSS / SCSS",
@@ -61,6 +61,7 @@ function About(){
       <Projects
         name="Seer's Challenge"
         repo="https://github.com/Lo-str/js-quest.git"
+        image={arcane}
         tech={[
           "JavaScript: arrays, loops, randomization",
           "HTML5 structure",
