@@ -1,5 +1,10 @@
+import { useState } from "react"
 import Projects from "../../components/Projects/Projects.jsx"
+import Popup from "../../components/Popup/Popup.jsx"
+import arcane from "../../assets/images/arcane.svg"
+
 function About(){
+  const [showPopup, setShowPopup] = useState(false)
     return (
     <div>
         <h1>Projects</h1>

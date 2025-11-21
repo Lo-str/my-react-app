@@ -1,14 +1,35 @@
 import "./Projects.css"
 import {useState} from "react"
-// import projectPic from "../assets/";
+import labPic from "../../assets/images/arcane.svg";
+import Popup from "../Popup/Popup.jsx"
+import ShowContent from "../Popup/ShowContent.jsx"
 
 function Projects(props){
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
+  const [popupImg, setPopupImg] = useState(null)
+  const [isOpen, setIsOpen] = useState(false)
+  
+  function HideContent(){
+    setShow(false)
+  }
+  function OpenPopup(image){
+    setPopupImg(image)
+    setIsOpen(true)
+  }
+  function ClosePopup(image){
+    setIsOpen(false)
+    setPopupImg(null)
+  }
 
   return (
   <>
     <div className="project">
-      <h2 className="projectName">{props.name}</h2>
+      <h2 onMouseEnter={() => setIsOpen(true)} className="projectName">{props.name}</h2>
+      {isOpen &&(
+        <Popup
+          image={isOpen.image}
+          onMouseLeave={ClosePopup} />
+      )}
 
       {/* To add:
       - fa-github inline with Project name */}
@@ -19,8 +40,12 @@ function Projects(props){
       - Move button under text when display is block
       - Columns
       - Images for preview*/}
-      <button className="btn" onClick={() => setShow((show) => !show)}>{show ? "Show more" : "Show less"}</button>
-      <div className="projectContent" style={{display: show ? "none" : "block"}}>
+      <button className="btn" onClick={() => setShow(true)}>Show more</button>
+      {show && (
+        <ShowContent
+        content={ShowContent.content}
+        onClick={HideContent} />
+      )}
         <article className="projectTech">
           <h3 className="tech">Tech Used</h3>
           <ul>
