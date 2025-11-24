@@ -1,0 +1,17 @@
+// Tools
+@use "../../style/utils/vars" as v;
+@use "../../style/utils/mixins" as m;
+
+.card{
+  @include m.card;
+}
+
+.name {
+  cursor: pointer;
+}
+
+.tech,
+.writeUp,
+.toSum {
+  display: none;
+}

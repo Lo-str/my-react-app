@@ -5,7 +5,7 @@
 // Layout
 .app {
   min-height: 100vh;
-  @include m.flex(column, none, center, v.$sp-10);
+  @include m.flex(column, none, center);
   background-color: v.$clr-bg;
   padding: v.$sp-10;
 }
@@ -17,7 +17,7 @@
 }
 
 .app__header {
-  @include m.flex(row, space-between, flex-start, v.$sp-10);
+  @include m.flex(row, space-between, flex-start);
   justify-content: space-between;
   padding: v.$sp-10;
 }

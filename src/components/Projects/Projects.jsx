@@ -1,14 +1,16 @@
 import {useState} from "react"
 import Popup from "../Popup/Popup.jsx"
 import ShowContent from "../Popup/ShowContent.jsx"
+import styles from "./Projects.module.scss"
 
 function Projects(props){
   const [show, setShow] = useState(false)
   const [popupImg, setPopupImg] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
-  
-  function HideContent(){
-    setShow(false)
+
+  function ToggleContent(){
+    setShow(s => !s)
+
   }
 
   function OpenPopup(img){
@@ -23,10 +25,10 @@ function Projects(props){
 
   return (
     <>
-      <div className="project">
-        <h2 
-          onMouseEnter={() => OpenPopup(props.image)} 
-          className="projectName"
+      <div className={styles.card}>
+        <h2
+          onMouseEnter={() => OpenPopup(props.image)}
+          className={styles.name}
         >
           {props.name}
         </h2>
@@ -38,22 +40,17 @@ function Projects(props){
           />
         )}
 
-        {/* To add:
-        - fa-github inline with Project name */}
         <a className="projectRepo" href={props.repo} target="_blank">
           Github
         </a>
         <br />
+        <br />
 
-        {/* To add: 
-        - Move button under text when display is block
-        - Columns
-        - Images for preview*/}
-        <button 
-          className="btn" 
-          onClick={() => setShow(true)}
+        <button
+          className="btn"
+          onClick={ToggleContent}
         >
-          Show more
+          {show ? "Show less" : "Show more"}
         </button>
 
         {show && (
@@ -61,41 +58,40 @@ function Projects(props){
             tech={props.tech}
             writeUp={props.writeUp}
             toSum={props.toSum}
-            onClick={HideContent}
           />
         )}
 
-          <article className="projectTech">
-            <h3 className="tech">Tech Used</h3>
-            <ul>
-              {props.tech.map((tech, i) => (
-              <li key={i}>{tech}</li>
-              ))}
-            </ul>
-          </article>
+        <article className={styles.tech}>
+          <h3 className="tech">Tech Used</h3>
+          <ul>
+            {props.tech.map((tech, i) => (
+            <li key={i}>{tech}</li>
+            ))}
+          </ul>
+        </article>
 
-          <div className="projectWriteUp">
-            <h3 className="writeUp">Write Up</h3>
-            <h4 className="goal">What the project does</h4>
-            <p>{props.writeUp.goal}</p>
+        <div className={styles.writeUp}>
+          <h3 className="writeUp">Write Up</h3>
+          <h4 className="goal">What the project does</h4>
+          <p>{props.writeUp.goal}</p>
 
-            <h4 className="learned">What I learned</h4>
-            <p>{props.writeUp.learned}</p>
+          <h4 className="learned">What I learned</h4>
+          <p>{props.writeUp.learned}</p>
 
-            <h4 className="role">My role</h4>
-            <p>{props.writeUp.role}</p>
+          <h4 className="role">My role</h4>
+          <p>{props.writeUp.role}</p>
 
-            <h4 className="challenges">Challenges I encountered</h4>
-            <ul>
-              {props.writeUp.challenges.map((challenges, i) => (
-              <li key={i}>{challenges}</li>
-              ))}
-            </ul>
+          <h4 className="challenges">Challenges I encountered</h4>
+          <ul>
+            {props.writeUp.challenges.map((challenges, i) => (
+            <li key={i}>{challenges}</li>
+            ))}
+          </ul>
 
-            <p className="projectSummary">{props.toSum}</p>
-          </div>
+          <p className={styles.toSum}>{props.toSum}</p>
+        </div>
       </div>
-    </> 
+    </>
   )
 }
 

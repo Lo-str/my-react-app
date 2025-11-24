@@ -1,7 +1,7 @@
-function ShowContent(props) {  
+import {useState} from "react"
+function ShowContent(props) {
   return(
-    <div className="card">
-      
+    <div>
       <ul>
         {props.tech.map((t, i) => (
           <li key={i}>{t}</li>
@@ -12,13 +12,6 @@ function ShowContent(props) {
       <p>{props.writeUp.learned}</p>
       <p>{props.writeUp.role}</p>
       <p>{props.toSum}</p>
-
-      <button 
-        className="card__btn" 
-        onClick={props.onClick}
-      >
-        Show 
-      </button>
     </div>
   )
 }
