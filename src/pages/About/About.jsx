@@ -12,7 +12,7 @@ function About() {
   //   },
   //   {
   //     title: "Vault of the Realm",
-  //     tags: ["#JavaScript", "#HTML", "SCSS"],
+  //     tech: ["#JavaScript", "#HTML", "SCSS"],
   //     info: "Vault of the Realm is a fantasy-themed ATM simulator. Users can deposit, withdraw, and check balances through a narrative interface. It replicates real account-logic safely while maintaining an engaging RPG-style experience."
   //   },
   //   {
