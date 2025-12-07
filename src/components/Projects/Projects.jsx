@@ -1,9 +1,19 @@
 import {useState} from "react"
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Popup from "../Popup/Popup.jsx"
 import ShowContent from "../Popup/ShowContent.jsx"
 import styles from "./Projects.module.scss"
 
 function Projects(props){
+  const {
+    name,
+    image,
+    repo,
+    tech = [],
+    writeUp,
+    toSum,
+  } = props;
   const [show, setShow] = useState(false)
   const [popupImg, setPopupImg] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
@@ -27,10 +37,10 @@ function Projects(props){
     <>
       <div className={styles.card}>
         <h2
-          onMouseEnter={() => OpenPopup(props.image)}
+          onMouseEnter={() => OpenPopup(image)}
           className={styles.name}
         >
-          {props.name}
+          {name}
         </h2>
 
         {isOpen &&(
@@ -38,13 +48,20 @@ function Projects(props){
             image={popupImg}
             onMouseLeave={ClosePopup}
           />
-        )}
+        )} 
+        <br />
+        <div className={styles.wrap}>
 
-        <a className="projectRepo" href={props.repo} target="_blank">
-          Github
-        </a>
-        <br />
-        <br />
+          <div className={styles.tech}>
+            {tech.map((tech, i) => (
+              <span key={i}>{tech}</span>))}
+          </div>
+
+          <a className="projectRepo" href={repo} target="_blank">
+              <FontAwesomeIcon icon={faGithubAlt} style={{ color: "white"}} />
+          </a>
+          <br />
+        </div>
 
         <button
           className="btn"
@@ -55,40 +72,30 @@ function Projects(props){
 
         {show && (
           <ShowContent
-            tech={props.tech}
-            writeUp={props.writeUp}
-            toSum={props.toSum}
+            writeUp={writeUp}
+            toSum={toSum}
           />
         )}
-
-        <article className={styles.tech}>
-          <h3 className="tech">Tech Used</h3>
-          <ul>
-            {props.tech.map((tech, i) => (
-            <li key={i}>{tech}</li>
-            ))}
-          </ul>
-        </article>
 
         <div className={styles.writeUp}>
           <h3 className="writeUp">Write Up</h3>
           <h4 className="goal">What the project does</h4>
-          <p>{props.writeUp.goal}</p>
+          <p>{writeUp.goal}</p>
 
           <h4 className="learned">What I learned</h4>
-          <p>{props.writeUp.learned}</p>
+          <p>{writeUp.learned}</p>
 
           <h4 className="role">My role</h4>
-          <p>{props.writeUp.role}</p>
+          <p>{writeUp.role}</p>
 
           <h4 className="challenges">Challenges I encountered</h4>
           <ul>
-            {props.writeUp.challenges.map((challenges, i) => (
+            {writeUp.challenges.map((challenges, i) => (
             <li key={i}>{challenges}</li>
             ))}
           </ul>
 
-          <p className={styles.toSum}>{props.toSum}</p>
+          <p className={styles.toSum}>{toSum}</p>
         </div>
       </div>
     </>

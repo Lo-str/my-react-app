@@ -7,11 +7,12 @@
 }
 
 .main {
-  border: 2px solid red;
-  @include m.flex(space-around);
-  max-width: v.$sp_1200;
-  width: 100%;
+  @include m.flex(column);
+  gap: v.$sp_30;
+  // max-width: 80vw;
+  // width: 100%;
+  width: 50vw;
   min-height: 100vh;
-  margin: v.$sp_30;
+  
 }
 
